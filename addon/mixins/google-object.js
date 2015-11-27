@@ -6,7 +6,6 @@ var computed = Ember.computed;
 var get$ = Ember.get;
 var fmt = Ember.String.fmt;
 var dasherize = Ember.String.dasherize;
-var forEach = Ember.EnumerableUtils.forEach;
 
 /**
  * @extension GoogleObjectMixin
@@ -170,7 +169,7 @@ var GoogleObjectMixin = Ember.Mixin.create({
       defaultTarget = this.get('googleEventsTarget');
 
       // first add our core events
-      forEach(this.get('_coreGoogleEvents') || [], function (name) {
+      (this.get('_coreGoogleEvents') || []).forEach(function (name) {
         res.push(new GoogleObjectEvent(name, {
           target:  this,
           method:  '_handleCoreEvent',

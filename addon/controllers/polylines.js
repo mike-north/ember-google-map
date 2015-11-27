@@ -6,7 +6,7 @@ var computed = Ember.computed;
  * @class GoogleMapPolylinesController
  * @extends Ember.ArrayController
  */
-export default Ember.ArrayController.extend({
+export default Ember.Controller.extend({
   itemController: computed.alias('parentController.polylineController'),
   model:          computed.alias('parentController.polylines'),
   pathController: computed.alias('parentController.polylinePathController')

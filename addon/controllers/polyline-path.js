@@ -8,7 +8,7 @@ var computed = Ember.computed;
  * @class GoogleMapPolylinePathController
  * @extends Ember.ArrayController
  */
-export default Ember.ArrayController.extend(GoogleArrayMixin, {
+export default Ember.Controller.extend(GoogleArrayMixin, {
   model:                  computed.alias('parentController.path'),
   googleItemFactory:      helpers._latLngToGoogle,
   emberItemFactory:       function (googleLatLng) {
